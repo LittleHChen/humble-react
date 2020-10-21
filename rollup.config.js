@@ -2,8 +2,13 @@ import typescript from 'rollup-plugin-typescript2';
 import external  from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import { babel } from '@rollup/plugin-babel';
 
 import pkg from "./package.json";
+
+const babelOptions = {
+    "presets": ['@babel/preset-env'],
+};
 
 export default {
     input: "src/index.tsx",
@@ -43,6 +48,7 @@ export default {
                 ],
                 "node_modules/react-dom/index.js": ["render"]
             }
-        })
+        }),
+        babel(babelOptions),
     ]
 };
