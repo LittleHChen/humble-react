@@ -5,5 +5,11 @@
   "main": "index.js",
   "repository": "https://github.com/LittleHChen/humble-react.git",
   "author": "HC <369959782@qq.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^16.9.53",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "typescript": "^4.0.3"
+  }
 }
