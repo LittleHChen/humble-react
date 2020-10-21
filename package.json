@@ -1,0 +1,9 @@
+{
+  "name": "humble-react",
+  "version": "1.0.0",
+  "description": "A small react component library.",
+  "main": "index.js",
+  "repository": "https://github.com/LittleHChen/humble-react.git",
+  "author": "HC <369959782@qq.com>",
+  "license": "MIT"
+}
