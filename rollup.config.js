@@ -3,6 +3,7 @@ import external  from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { babel } from '@rollup/plugin-babel';
+import postcss from "rollup-plugin-postcss";
 
 import pkg from "./package.json";
 
@@ -11,7 +12,7 @@ const babelOptions = {
 };
 
 export default {
-    input: "src/index.tsx",
+    input: "src/index.ts",
     output: [
         {
             file: pkg.main,
@@ -32,6 +33,7 @@ export default {
             browser: true
         }),
         typescript({
+            useTsconfigDeclarationDir: true,
             rollupCommonJSResolveHack: true,
             exclude: "**/__tests__/**",
             clean: true
@@ -50,5 +52,6 @@ export default {
             }
         }),
         babel(babelOptions),
+        postcss(),
     ]
 };
